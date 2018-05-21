@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>小鳗君</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script type="text/javascript">
+    (function(designW) {
+        var docEl = document.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 100 * (clientWidth / designW) + 'px';
+            };
+        if (!document.addEventListener) return;
+        recalc();
+        window.addEventListener(resizeEvt, recalc, false);
+        document.addEventListener('DOMContentLoaded', recalc, false);
+    })(750);
+    </script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="body">
+        <div class="main">
+            <!-- 聊天记录 -->
+            <div class="content">
+                <div class="list">
+                    <div class="pop">
+                        <div class="time"></div>
+                        <div class="span">
+                            <div class="text">我是小鳗君,可智能聊天哟。/调皮</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="blank"></div>
+        <div id="mask"></div>
+            <!-- 输入框 -->
+            <div class="edit-text">
+                <input type="text" id="inputContain">
+                <a href="javascript:;" class="edit-btn" id="sendButton">发送</a>
+            </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
